@@ -1,0 +1,61 @@
+#intro {
+	margin: 2.75rem 0 1.75rem 0;
+	text-align: center;
+	font-size: 1.75rem;
+	line-height: 1;
+	span {
+		font-size: 1.25rem;
+		color: #9B9B9B;
+	}
+}
+#posts {
+	.post {
+		background: #F8F9FA;
+		width: 30%;
+		float: left;
+		margin: 1rem 1.5%;
+		border: 1px solid #E4E4E4;
+		border-radius: 0.3rem;
+		.post_image {
+			height: 200px;
+			overflow: hidden;
+			img {
+				width: 100%;
+				border-radius: .3rem .3rem 0 0;
+			}
+		}
+		.post_content {
+			h2 {
+				margin: 0;
+				font-weight: 100;
+				padding: 1rem 5%;
+				border-bottom: 1px solid #E4E4E4;
+				font-size: 1.25rem;
+				a {
+					text-decoration: none;
+					color: #333233;
+					&:hover {
+						color: #50A7C7;
+					}
+				}
+			}
+			.data {
+				padding: .75rem 5%;
+				color: #969696;
+				.username, .buttons {
+					margin: 0;
+					font-size: .8rem;
+				}
+				.username {
+					float: left;
+				}
+				.buttons {
+					float: right;
+					span {
+						margin-left: .5rem;
+					}
+				}
+			}
+		}
+	}
+}

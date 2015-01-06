@@ -16,7 +16,7 @@
 	- @posts.each do |post|
 		.post
 			.post_image
-				= link_to (image_tag post.image.url(:small))
+				= link_to (image_tag post.image.url(:small)), post
 			.post_content
 				.title
 					%h2= link_to post.title, post
