@@ -2,18 +2,14 @@
 	- @posts.each do |post|
 		.post
 			.post_gif
-				= link_to (image_tag post.image.url(:medium)), post
-			.title
-				%h2= link_to post.title, post
+				= link_to (image_tag post.image.url(:large)), post
 			.post_content
-				.data.clearfix
-					%p.username
-						Shared by
-						= post.user.name
-					%p.buttons
-						%span
-							%i.fa.fa-comments-o
-							= post.comments.count
-						%span
-							%i.fa.fa-thumbs-o-up
-							= post.get_likes.size
+				.title
+					%h2= link_to post.title, post
+				.image_row.clearfix
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post

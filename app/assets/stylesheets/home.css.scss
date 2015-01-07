@@ -4,51 +4,37 @@
 	padding: 1.5em 0;
 	font-size: 1.75rem;
 	line-height: 1;
+	margin-bottom: 1rem;
 }
 
 #posts {
 	.post {
-		width: 30%;
+		width: 47%;
 		float: left;
 		margin: 1rem 1.5%;
-		.post_image {
-			height: 200px;
+		.post_gif {
+			@include border-radius($image_medium/2); // set to toggle with view switch
+			height: $image_medium;
+			width: $image_medium;
 			overflow: hidden;
-			img {
-				width: 100%;
-				border-radius: .3rem .3rem 0 0;
-			}
+			float: left;
 		}
 		.post_content {
+			float: left;
+			margin-left: 1rem;
 			h2 {
-				margin: 0;
-				font-weight: 100;
-				padding: 1rem 5%;
-				border-bottom: 1px solid #E4E4E4;
-				font-size: 1.25rem;
-				a {
-					text-decoration: none;
-					color: #333233;
-					&:hover {
-						color: #50A7C7;
-					}
-				}
+				margin: 0 0 .25rem 0;
 			}
-			.data {
-				padding: .75rem 5%;
-				color: #969696;
-				.username, .buttons {
-					margin: 0;
-					font-size: .8rem;
-				}
-				.username {
-					float: left;
-				}
-				.buttons {
-					float: right;
-					span {
-						margin-left: .5rem;
-					}
+			.image_row_item {
+				height: $image_small;
+				width: $image_small;
+				@include border-radius($image_small/2); // set to toggle with view switch
+			}
+			a {
+				text-decoration: none;
+				color: $black;
+				&:hover {
+					color: $gray;
 				}
 			}
 		}
