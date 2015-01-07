@@ -2,13 +2,13 @@
  *= require_self
  */
 
-body {
-	font-family: Helvetica;
-	font-weight: 100;
-}
+@import 'mixins';
+@import 'type';
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 100;
+body {
+	font-family: $font-stack;
+	font-weight: 400;
+	
 }
 
 .wrapper {
