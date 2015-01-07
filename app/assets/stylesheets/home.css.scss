@@ -13,11 +13,14 @@
 		float: left;
 		margin: 1rem 1.5%;
 		.post_gif {
-			@include border-radius($image_medium/2); // set to toggle with view switch
 			height: $image_medium;
 			width: $image_medium;
+			@include border-radius($image_medium/2); // set to toggle with view switch
 			overflow: hidden;
 			float: left;
+			img {
+				width: 100%;
+			}
 		}
 		.post_content {
 			float: left;
@@ -29,6 +32,9 @@
 				height: $image_small;
 				width: $image_small;
 				@include border-radius($image_small/2); // set to toggle with view switch
+				img {
+					width: 100%;
+				}
 			}
 			a {
 				text-decoration: none;
