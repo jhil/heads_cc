@@ -1,15 +1,21 @@
-#posts
+-# .header
+-# 	#description
+-# 		%p Download placeholder sets for designing interfaces.
+-# 	#search
+-# 		%input{type: "text", placeholder: "Search"}
+
+#posts.clearfix
 	- @posts.each do |post|
 		.post
 			.post_gif
-				= link_to (image_tag post.image.url(:large)), post
+				= link_to (image_tag post.image.url(:large), class: "head"), post
 			.post_content
 				.title
 					%h2= link_to post.title, post
 				.image_row.clearfix
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
-					= link_to (image_tag post.image.url(:small), class: "image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post
+					= link_to (image_tag post.image.url(:small), class: "head image_row_item"), post

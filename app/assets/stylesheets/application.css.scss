@@ -24,13 +24,22 @@ body {
 	clear: both;
 }
 
-.button {
+button, .button {
 	border: 1px solid $gray;
 	padding: .75rem 1.25rem;
 	border-radius: .3rem;
 	outline: none;
 	background: white;
 	color: $gray;
+}
+
+input {
+	border: none;
+	border-bottom: 1px $gray solid;
+	padding: .5rem .25rem;
+	font-family: $font-stack;
+	font-weight: 400;
+
 }
 
 header {
@@ -58,6 +67,12 @@ header {
 				color: $black;
 			}
 		}
+	}
+}
+
+.head {
+	&:hover {
+		opacity: .9;
 	}
 }
 
