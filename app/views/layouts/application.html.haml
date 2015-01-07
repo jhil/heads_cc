@@ -21,8 +21,9 @@
 				- else
 					= link_to "Sign In", new_user_session_path
 					= link_to "Sign Up", new_user_registration_path, class: "button"
-	%p.notice= notice
-	%p.alert= alert
+	.wrapper
+		%p.notice= notice
+		%p.alert= alert
 
 	- if current_page?('/')
 		=render partial: "intro"
