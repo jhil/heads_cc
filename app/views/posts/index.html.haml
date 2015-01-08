@@ -1,17 +1,12 @@
--# .header
--# 	#description
--# 		%p Download placeholder sets for designing interfaces.
--# 	#search
--# 		%input{type: "text", placeholder: "Search"}
 
 #posts.clearfix
 	- @posts.each do |post|
 		.post
 			.post_gif
-				-# = link_to (image_tag post.image.url(:large), class: "head"), post
+				= image_tag "placeholder-head.svg"
 			.post_content
 				.title
 					%h2= link_to post.title, post
-
-				- post.heads.each do |head|
-					= link_to (image_tag head.image.url(:small), class: "head image_row_item"), post
+				.image_row
+					- post.heads.each do |head|
+						= link_to (image_tag head.image.url(:small), class: "head image_row_item"), post

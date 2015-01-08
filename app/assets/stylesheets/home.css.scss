@@ -15,7 +15,7 @@
 		.post_gif {
 			height: $image_medium;
 			width: $image_medium;
-			@include border-radius($image_medium/2); // set to toggle with view switch
+			// @include border-radius($image_medium/2); // set to toggle with view switch
 			overflow: hidden;
 			float: left;
 			img {
@@ -28,12 +28,17 @@
 			h2 {
 				margin: 0 0 .25rem 0;
 			}
-			.image_row_item {
+			.image_row {
+				width: 18vw; // temp FIX ME
 				height: $image_small;
-				width: $image_small;
-				@include border-radius($image_small/2); // set to toggle with view switch
-				img {
-					width: 100%;
+				overflow: hidden;
+				.image_row_item {
+					height: $image_small;
+					width: $image_small;
+					@include border-radius($image_small/2); // set to toggle with view switch
+					img {
+						width: 100%;
+					}
 				}
 			}
 			a {
