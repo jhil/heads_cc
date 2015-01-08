@@ -1,6 +1,6 @@
-= simple_form_for @post do |f|
-	= f.simple_fields_for :heads, @post.heads.build do |a|
-		= a.input :image
+= simple_form_for @post, html: {:multipart => true} do |f|
+	= f.label :heads
+	= file_field_tag "images[]", type: :file, multiple: true
 	= f.input :title
 	= f.input :link
 	= f.input :description
