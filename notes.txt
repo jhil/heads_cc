@@ -1,1 +1,22 @@
+## References
+
+https://mackenziechild.me/12-in-12/12/
+
+http://stackoverflow.com/questions/14880100/multiple-upload-with-paperclip-in-ror?lq=1
+
+http://www.railscook.com/recipes/multiple-files-upload-with-nested-resource-using-paperclip-in-rails/
+
+## To-Do
+
 check devise getting started
+refactor Post to Pack
+
+## Questions
+
+What is a `before_action`?
+What's the difference between `@post`, `@posts`, `post`, `posts`, `:post`, `:posts`, `Post`, `Posts`?
+How do I navigate the console?
+Where do the model fields go once I generate? How do I edit them?
+How do I refactor the name of a model?
+What are builders?
+What does `@post do |f|` mean?

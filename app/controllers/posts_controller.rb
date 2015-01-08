@@ -20,6 +20,12 @@ class PostsController < ApplicationController
 		@post = current_user.posts.build(post_params)
 
 		if @post.save
+			if params[:images]
+			  params[:images].each { |image|
+			    @post.heads.create(image: image)
+			  }
+			end
+
 			redirect_to @post
 		else
 			render 'new'
@@ -59,7 +65,7 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :link, :description, :image)
+		params.require(:post).permit(:heads, :title, :link, :description, :image)
 	end
 
 end
