@@ -7,8 +7,9 @@
 		= time_ago_in_words(@post.created_at)
 	.clearfix
 		.post_image_description
-			-# = image_tag @post.image.url(:medium)
 			.description= simple_format(@post.description)
+			- @heads.each do |head|
+				= image_tag head.image.url(:medium)
 		.post_data
 			= link_to "Visit Link", @post.link, class: "button"
 			= link_to like_post_path(@post), method: :get, class: "data" do
