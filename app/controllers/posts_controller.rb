@@ -60,7 +60,7 @@ class PostsController < ApplicationController
 		redirect_to :back
 	end
 
-	def download
+	def download ## make this work!!!
 		file_path = "#{Rails.root}/public/uploads/#{params[:filename]}"
 		send_data file_path, :filename => params[:filename], :disposition => 'attachment'
 	end
