@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :download]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -60,6 +60,12 @@ class PostsController < ApplicationController
 		redirect_to :back
 	end
 
+	def download
+		file_path = "#{Rails.root}/public/uploads/#{params[:filename]}"
+		send_data file_path, :filename => params[:filename], :disposition => 'attachment'
+	end
+
+	 
 	private
 
 	def find_post

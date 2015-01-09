@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :posts do
+    get '/posts/:post_id/download', to: 'posts#download', as: 'download'
   	member do
   		get "like", to: "posts#upvote"
   		get "dislike", to: "posts#downvote"
