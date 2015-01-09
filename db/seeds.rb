@@ -1,6 +1,1 @@
 User.create("email"=>"jahilnbrand@gmail.com", "name"=>"Jeff Hilnbrand", "password"=>"password")
-Post.create("title"=>"Scientists", "link"=>"#", "description"=>"", "user_id"=>1, "image_file_name"=>"AlbertEinstein.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>14341, "image_updated_at"=>"Wed, 07 Jan 2015 22:23:11 UTC +00:00")
-Post.create("title"=>"Calvin and Hobbes", "link"=>"#", "description"=>"", "user_id"=>1, "image_file_name"=>"SpacemanSpiff.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>14525, "image_updated_at"=>"Wed, 07 Jan 2015 22:23:27 UTC +00:00")
-Post.create("title"=>"U.S. Men's National Team", "link"=>"#", "description"=>"", "user_id"=>1, "image_file_name"=>"TimHoward.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>8003, "image_updated_at"=>"Wed, 07 Jan 2015 22:23:46 UTC +00:00")
-Post.create("title"=>"Star Wars", "link"=>"#", "description"=>"", "user_id"=>1, "image_file_name"=>"HanSolo.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>10209, "image_updated_at"=>"Wed, 07 Jan 2015 22:24:01 UTC +00:00")
-Post.create("title"=>"Wet Hot American Summer", "link"=>"#", "description"=>"", "user_id"=>1, "image_file_name"=>"Coop.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>9555, "image_updated_at"=>"Wed, 07 Jan 2015 22:24:22 UTC +00:00")
