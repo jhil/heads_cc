@@ -8,12 +8,31 @@
 
 #posts {
 	.post {
-		@include span-columns(6);
-		@include omega(2n);
+		@include media($mobile) {
+		  @include span-columns(4);
+		}
+		@include media($desktop) {
+		  @include span-columns(6);
+		  @include omega (2n);
+		}
+		@include media($large) {
+		  @include span-columns(4);
+		  @include omega (3n);
+		}
+
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		.post_gif {
-			@include span-columns(1 of 6);
+			@include media($mobile) {
+				@include span-columns(1 of 4);
+			}
+			@include media($desktop) {
+			  @include span-columns(1 of 6);
+			}
+			@include media($large) {
+			  @include span-columns(1 of 4);
+			}
+
 			border-radius: 50%; // set to toggle with view switch
 			overflow: hidden;
 			img {
@@ -21,7 +40,16 @@
 			}
 		}
 		.post_content {
-			@include span-columns(5 of 6);
+			@include media($mobile) {
+				@include span-columns(3 of 4);
+			}
+			@include media($desktop) {
+			  @include span-columns(5 of 6);
+			}
+			@include media($large) {
+			  @include span-columns(3 of 4);
+			}
+
 			h2 {
 				margin: 0 0 .25rem 0;
 			}
