@@ -2,40 +2,36 @@
 	background: $black;
 	color: $white;
 	padding: 1.5em 0;
-	font-size: 1.75rem;
 	line-height: 1;
 	margin-bottom: 1rem;
 }
 
 #posts {
 	.post {
-		width: 47%;
-		float: left;
-		margin: 1rem 1.5%;
+		@include span-columns(6);
+		@include omega(2n);
+		margin-top: 1rem;
+		margin-bottom: 1rem;
 		.post_gif {
-			height: $image_medium;
-			width: $image_medium;
-			// @include border-radius($image_medium/2); // set to toggle with view switch
+			@include span-columns(1 of 6);
+			border-radius: 50%; // set to toggle with view switch
 			overflow: hidden;
-			float: left;
 			img {
 				width: 100%;
 			}
 		}
 		.post_content {
-			float: left;
-			margin-left: 1rem;
+			@include span-columns(5 of 6);
 			h2 {
 				margin: 0 0 .25rem 0;
 			}
 			.image_row {
-				width: 18vw; // temp FIX ME
 				height: $image_small;
 				overflow: hidden;
 				.image_row_item {
 					height: $image_small;
 					width: $image_small;
-					@include border-radius($image_small/2); // set to toggle with view switch
+					border-radius: 50%; // set to toggle with view switch
 					img {
 						width: 100%;
 					}
@@ -49,13 +45,5 @@
 				}
 			}
 		}
-	}
-}
-
-.header {
-	#description, #search {
-		float: left;
-		width: 47%;
-		margin: 0 1.5%;
 	}
 }

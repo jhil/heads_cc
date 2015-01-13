@@ -14,6 +14,8 @@ gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'rubyzip', '~> 1.1.6'
+gem 'bourbon'
+gem 'neat'
 
 gem 'spring',        group: :development
 gem 'pry', '~> 0.10.1', group: :development

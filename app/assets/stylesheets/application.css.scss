@@ -2,12 +2,13 @@
  *= require_self
  */
 
-@import 'mixins';
+@import 'bourbon';
+@import 'neat';
+
+@import 'color';
 @import 'type';
 
 body {
-	font-family: $font-stack;
-	font-weight: 400;
 	margin: 0;
 }
 
@@ -76,6 +77,10 @@ header {
 		opacity: .9;
 	}
 }
+
+$image-small: 	2rem;
+$image-medium: 	3rem;
+$image-large: 	100px;
 
 @import 'home.css.scss';
 @import 'posts.css.scss';

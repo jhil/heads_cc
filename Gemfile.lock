@@ -30,6 +30,9 @@ GEM
     acts_as_votable (0.10.0)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -69,6 +72,9 @@ GEM
     mime-types (2.4.3)
     minitest (5.5.0)
     multi_json (1.10.1)
+    neat (1.5.1)
+      bourbon (>= 3.1)
+      sass (~> 3.2.19)
     orm_adapter (0.5.0)
     paperclip (4.2.1)
       activemodel (>= 3.0.0)
@@ -148,11 +154,13 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  bourbon
   coffee-rails (~> 4.0.0)
   devise (~> 3.4.1)
   haml (~> 4.0.6)
   jbuilder (~> 2.0)
   jquery-rails
+  neat
   paperclip (~> 4.2.1)
   pg
   pry (~> 0.10.1)
