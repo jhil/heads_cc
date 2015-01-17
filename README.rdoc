@@ -5,6 +5,8 @@ Download placeholder packs for designing interfaces.
 
 == README
 
-rake db:migrate
-rake db:seed
-rails s
+start postgres   
+rake db:migrate   
+rake db:seed   
+rails s   
+open localhost:3000
