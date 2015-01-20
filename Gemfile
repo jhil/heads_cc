@@ -18,7 +18,7 @@ gem 'bourbon'
 gem 'neat'
 
 gem 'spring',        group: :development
-gem 'pry', '~> 0.10.1', group: :development
+gem 'pry',           group: :development
 
 gem 'rails_12factor', group: :production
 

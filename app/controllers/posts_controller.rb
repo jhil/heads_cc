@@ -1,6 +1,8 @@
+require 'pry'
+
 class PostsController < ApplicationController
 
-	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote, :download]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -58,6 +60,13 @@ class PostsController < ApplicationController
 	def downvote
 		@post.downvote_by current_user
 		redirect_to :back
+	end
+
+	def download
+		uploads_path = "#{Rails.root}/public/uploads" 
+		file_path = uploads_path+"/#{@post.title.parameterize}"
+		`zip -r "#{file_path}" "#{file_path}"`
+		send_file file_path+".zip", filename: @post.title.parameterize+".zip", :disposition => 'attachment'
 	end
 
 	private

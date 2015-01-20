@@ -163,7 +163,7 @@ DEPENDENCIES
   neat
   paperclip (~> 4.2.1)
   pg
-  pry (~> 0.10.1)
+  pry
   rails (= 4.1.8)
   rails_12factor
   rubyzip (~> 1.1.6)

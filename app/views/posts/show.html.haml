@@ -1,7 +1,7 @@
 #post_show
 	%h1= @post.title
 	%p.username
-		Share by
+		Created by
 		= @post.user.name
 		about
 		= time_ago_in_words(@post.created_at)
@@ -11,7 +11,7 @@
 			- @heads.each do |head|
 				= image_tag head.image.url(:medium)
 		.post_data
-			= link_to "Visit Link", @post.link, class: "button"
+			= link_to "Download Pack", download_post_path(@post) ## make this work!!!
 			= link_to like_post_path(@post), method: :get, class: "data" do
 				%i.fa.fa-thumbs-o-up
 				= pluralize(@post.get_upvotes.size, "Like")
