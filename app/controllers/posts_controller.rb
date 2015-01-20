@@ -65,7 +65,7 @@ class PostsController < ApplicationController
 	def download
 		uploads_path = "#{Rails.root}/public/uploads" 
 		file_path = uploads_path+"/#{@post.title.parameterize}"
-		`zip -r "#{file_path}" "#{file_path}"`
+		`zip -r -j "#{file_path}" "#{file_path}"`
 		send_file file_path+".zip", filename: @post.title.parameterize+".zip", :disposition => 'attachment'
 	end
 
