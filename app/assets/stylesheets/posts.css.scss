@@ -5,29 +5,28 @@
 		float: left;
 		margin-right: 5%;
 	}
-	.post_data {
+	.post_action {
 		width: 15%;
 		float: left;
 		.button {
 			width: 100%;
 			display: inline-block;
-			padding: .75rem 0;
 			margin-bottom: 1rem;
 			text-align: center;
 			text-decoration: none;
-			color: #969696;
-			&:hover {
-				color: #50A7C7;
-				border: 1px solid #50A7C7;
-			}
+			// color: #969696;
+			// &:hover {
+			// 	color: #50A7C7;
+			// 	border: 1px solid #50A7C7;
+			// }
 		}
-		.data {
+		.action {
 			width: 100%;
 			display: block;
 			padding: .75rem 0;
-			border-bottom: 1px solid #E9E9E9;
+			border-bottom: 1px solid $gray;
 			text-decoration: none;
-			color: #969696;
+			color: $gray;
 			margin: 0;
 		}
 	}
@@ -63,23 +62,6 @@
 						color: #333233;
 						&:hover {
 							color: #50A7C7;
-						}
-					}
-				}
-				.data {
-					padding: .75rem 5%;
-					color: #969696;
-					.username, .buttons {
-						margin: 0;
-						font-size: .8rem;
-					}
-					.username {
-						float: left;
-					}
-					.buttons {
-						float: right;
-						span {
-							margin-left: .5rem;
 						}
 					}
 				}

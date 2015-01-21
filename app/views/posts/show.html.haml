@@ -7,20 +7,20 @@
 		= time_ago_in_words(@post.created_at)
 	.clearfix
 		.post_image_description
-			.description= simple_format(@post.description)
 			- @heads.each do |head|
 				= image_tag head.image.url(:medium)
-		.post_data
-			= link_to "Download Pack", download_post_path(@post)
+		.post_action
+			= link_to "Download Pack", download_post_path(@post), class: "button"
+			.description= simple_format(@post.description)
 			- if @post.user == current_user
-				= link_to "Edit", edit_post_path(@post), class: "data"
-				=link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
+				= link_to "Edit", edit_post_path(@post), class: "action"
+				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "action"
 
-#comments
-	%h2.comment_count= pluralize(@post.comments.count, "Comment")
-	- @comments.each do |comment|
-		.comment
-			%p.username= comment.user.name
-			%p.content= comment.content
+-# #comments
+-# 	%h2.comment_count= pluralize(@post.comments.count, "Comment")
+-# 	- @comments.each do |comment|
+-# 		.comment
+-# 			%p.username= comment.user.name
+-# 			%p.content= comment.content
 
-	= render 'comments/form'
+-# 	= render 'comments/form'
