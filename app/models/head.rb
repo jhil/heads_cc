@@ -14,14 +14,6 @@ class Head < ActiveRecord::Base
 	after_save :destroy_original
 	after_save :create_zip
 
-	def self.create_zip post
-		post_slug = post.title.parameterize
-		uploads_path = "#{Rails.root}/public/uploads"
-		file_path = uploads_path+"/#{post_slug}"
-
-		`cd "#{uploads_path}" && zip -r "#{post_slug}" "#{post_slug}"`
-	end
-
 	private
 	
 	def destroy_original # remove originals
@@ -30,6 +22,6 @@ class Head < ActiveRecord::Base
 	end
 
 	def create_zip
-		Head.create_zip Post.find(self.post_id)
+		Post.find(self.post_id).create_zip
 	end
 end

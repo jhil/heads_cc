@@ -53,14 +53,13 @@ class PostsController < ApplicationController
 	end
 
 	def download
-		post_slug = @post.title.parameterize
-		uploads_path = "#{Rails.root}/public/uploads"
-		file_path = uploads_path+"/#{post_slug}"
+		file_path = $uploads_path+"/#{@post.get_slug}"
 
 		if not File.exists?(file_path + '.zip')
-			Head.create_zip @post
+			@post.create_zip
 		end
-		send_file file_path+".zip", filename: post_slug+".zip", :disposition => 'attachment'
+
+		send_file file_path+".zip", filename: @post.get_slug+".zip", :disposition => 'attachment'
 	end
 
 	private
