@@ -56,9 +56,9 @@ class PostsController < ApplicationController
 		post_slug = @post.title.parameterize
 		uploads_path = "#{Rails.root}/public/uploads"
 		file_path = uploads_path+"/#{post_slug}"
-		
+
 		if not File.exists?(file_path + '.zip')
-			`cd "#{uploads_path}" && zip -r "#{post_slug}" "#{post_slug}"`
+			Head.create_zip @post
 		end
 		send_file file_path+".zip", filename: post_slug+".zip", :disposition => 'attachment'
 	end
