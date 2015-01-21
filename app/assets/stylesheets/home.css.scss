@@ -4,6 +4,9 @@
 	padding: 1.5em 0;
 	line-height: 1;
 	margin-bottom: 1rem;
+	h1 {
+		margin: 2rem 0;
+	}
 }
 
 #posts {
@@ -33,7 +36,7 @@
 			  @include span-columns(1 of 4);
 			}
 
-			border-radius: 50%; // set to toggle with view switch
+			// border-radius: 50%; // set to toggle with view switch
 			overflow: hidden;
 			img {
 				width: 100%;
@@ -51,7 +54,7 @@
 			}
 
 			h2 {
-				margin: 0 0 .25rem 0;
+				margin: 0 0 .5rem 0;
 			}
 			.image_row {
 				height: $image_small;
@@ -59,7 +62,6 @@
 				.image_row_item {
 					height: $image_small;
 					width: $image_small;
-					border-radius: 50%; // set to toggle with view switch
 					img {
 						width: 100%;
 					}

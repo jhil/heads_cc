@@ -29,7 +29,7 @@ body {
 	clear: both;
 }
 
-button, .button {
+button, .button, .btn {
 	border: 1px solid $gray;
 	padding: .75rem 1.25rem;
 	border-radius: .3rem;
@@ -39,6 +39,15 @@ button, .button {
 	text-align: center;
 	text-decoration: none;
 }
+
+.btn-primary {
+	background: $black;
+	color: $white;
+	&:hover {
+		background: $gray;
+	}
+}
+
 
 input {
 	border: none;
@@ -78,8 +87,11 @@ header {
 }
 
 .head {
+	opacity: 1;
+	border-radius: 50%; // set to toggle with view switch
 	&:hover {
 		opacity: .9;
+
 	}
 }
 

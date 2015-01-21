@@ -6,11 +6,11 @@
 		about
 		= time_ago_in_words(@post.created_at)
 	.clearfix
-		.post_image_description
+		.post_images
 			- @heads.each do |head|
-				= image_tag head.image.url(:medium)
+				= image_tag head.image.url(:large), class: "head"
 		.post_action
-			= link_to "Download Pack", download_post_path(@post), class: "button"
+			= link_to "Download Pack", download_post_path(@post), class: "button btn-primary"
 			.description= simple_format(@post.description)
 			- if @post.user == current_user
 				= link_to "Edit", edit_post_path(@post), class: "action"

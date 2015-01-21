@@ -1,24 +1,33 @@
-#post_show {
-	padding-top: 2rem;
-	.post_image_description {
-		width: 50%;
-		float: left;
-		margin-right: 5%;
+#post_show {	
+	.post_images {
+		@include span-columns(6);
+		.head {
+			@include media($mobile) {
+				width: $image-small;
+				height: $image-small;
+				margin: 0 .25rem .25rem 0;
+			}
+			@include media($desktop) {
+				width: $image-large;
+				height: $image-large;
+				margin: 0 .5rem .5rem 0;
+			}
+			@include media($large) {
+				width: $image-large;
+				height: $image-large;
+				margin: 0 .75rem .75rem 0;
+			}
+
+		}
 	}
 	.post_action {
-		width: 15%;
-		float: left;
+		@include span-columns(2);
 		.button {
 			width: 100%;
 			display: inline-block;
 			margin-bottom: 1rem;
 			text-align: center;
 			text-decoration: none;
-			// color: #969696;
-			// &:hover {
-			// 	color: #50A7C7;
-			// 	border: 1px solid #50A7C7;
-			// }
 		}
 		.action {
 			width: 100%;
@@ -29,58 +38,17 @@
 			color: $gray;
 			margin: 0;
 		}
-	}
-	#random_post {
-		width: 25%;
-		margin-left: 5%;
-		margin-top: -3.2rem;
-		float: left;
-		h3 {
-			font-size: 1rem;
+		.description {
+			margin: 2rem 0;
+			font-size: 1.1rem;
+			line-height: 1.5;
+			color: #969696;
 		}
-		.post {
-			background: #F8F9FA;
-			border: 1px solid #E4E4E4;
-			border-radius: 0.3rem;
-			.post_image {
-				height: 200px;
-				overflow: hidden;
-				img {
-					width: 100%;
-					border-radius: .3rem .3rem 0 0;
-				}
-			}
-			.post_content {
-				h2 {
-					margin: 0;
-					font-weight: 100;
-					padding: 1rem 5%;
-					border-bottom: 1px solid #E4E4E4;
-					font-size: 1.25rem;
-					a {
-						text-decoration: none;
-						color: #333233;
-						&:hover {
-							color: #50A7C7;
-						}
-					}
-				}
-			}
-		}
-	}
-	h1 {
-		margin: 0;
-		color: #333233;
+
 	}
 	.username {
-		color: #969696;
-		margin: 0 0 1.5rem 0;
-	}
-	.description {
-		margin: 2rem 0;
-		font-size: 1.1rem;
-		line-height: 1.5;
-		color: #969696;
+		color: $gray;
+		margin: 0 0 3rem 0;
 	}
 }
 
