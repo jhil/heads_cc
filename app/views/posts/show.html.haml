@@ -11,16 +11,7 @@
 			- @heads.each do |head|
 				= image_tag head.image.url(:medium)
 		.post_data
-			= link_to "Download Pack", download_post_path(@post) ## make this work!!!
-			= link_to like_post_path(@post), method: :get, class: "data" do
-				%i.fa.fa-thumbs-o-up
-				= pluralize(@post.get_upvotes.size, "Like")
-			= link_to dislike_post_path(@post), method: :get, class: "data" do
-				%i.fa.fa-thumbs-o-down
-				= pluralize(@post.get_downvotes.size, "Dislike")
-			%p.data
-				%i.fa.fa-comments-o
-				= pluralize(@post.comments.count, "Comment")
+			= link_to "Download Pack", download_post_path(@post)
 			- if @post.user == current_user
 				= link_to "Edit", edit_post_path(@post), class: "data"
 				=link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "data"
