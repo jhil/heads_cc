@@ -1,17 +1,18 @@
 #post_show
 	%h1= @post.title
-	%p.username
-		Created by
-		= @post.user.name
-		about
-		= time_ago_in_words(@post.created_at)
 	.clearfix
 		.post_images
 			- @heads.each do |head|
 				= image_tag head.image.url(:large), class: "head"
 		.post_action
 			= link_to "Download Pack", download_post_path(@post), class: "button btn-primary"
-			.description= simple_format(@post.description)
+			%p.description= simple_format(@post.description)
+			%p.username
+				Created by
+				= @post.user.name
+				about
+				= time_ago_in_words(@post.created_at)
+
 			- if @post.user == current_user
 				= link_to "Edit", edit_post_path(@post), class: "action"
 				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "action"

@@ -9,4 +9,4 @@
 					%h2= link_to post.title, post
 				.image_row
 					- post.heads.each do |head|
-						= link_to (image_tag head.image.url(:small), class: "head image_row_item"), post
+						= link_to (image_tag head.image.url(:medium), class: "head image_row_item"), post

@@ -6,51 +6,67 @@
 	margin-bottom: 1rem;
 	h1 {
 		margin: 2rem 0;
+		@include media($large) {
+			margin: 4rem 0;
+		}
 	}
 }
 
 #posts {
 	.post {
+		margin: 1rem 0;
+
 		@include media($mobile) {
-		  @include span-columns(12);
+		  @include span-columns(4);
+		}
+		@include media($tablet) {
+		  @include span-columns(8);
 		}
 		@include media($desktop) {
 		  @include span-columns(6);
 		  @include omega (2n);
 		}
 		@include media($large) {
-		  @include span-columns(4);
-		  @include omega (3n);
+		  @include span-columns(8);
+		  @include omega (2n);
 		}
 
-		margin-top: 1rem;
-		margin-bottom: 1rem;
 		.post_gif {
 			@include media($mobile) {
 				display: none;
+			}
+			@include media($tablet) {
+			  @include span-columns(1 of 8);
+			  // display: block;
+			  // float: left;
+			  // height: 69px;
+			  // margin-right: 1rem;
 			}
 			@include media($desktop) {
 			  @include span-columns(1 of 6);
 			}
 			@include media($large) {
-			  @include span-columns(1 of 4);
+			  @include span-columns(1 of 8);
 			}
 
 			// border-radius: 50%; // set to toggle with view switch
-			overflow: hidden;
 			img {
 				width: 100%;
 			}
 		}
 		.post_content {
 			@include media($mobile) {
-				@include span-columns(8 of 12);
+				@include span-columns(4);
 			}
+			@include media($tablet) {
+			  @include span-columns(7 of 8);
+			}
+
 			@include media($desktop) {
 			  @include span-columns(5 of 6);
 			}
 			@include media($large) {
-			  @include span-columns(3 of 4);
+			  @include span-columns(7 of 8);
 			}
 
 			h2 {
@@ -60,8 +76,8 @@
 				height: $image_small;
 				overflow: hidden;
 				.image_row_item {
-					height: $image_small;
 					width: $image_small;
+					height: $image_small;
 					img {
 						width: 100%;
 					}
@@ -77,3 +93,4 @@
 		}
 	}
 }
+

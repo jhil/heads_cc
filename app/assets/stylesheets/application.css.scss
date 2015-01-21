@@ -5,7 +5,7 @@
 @import 'bourbon';
 @import 'neat';
 
-@import 'color';
+@import 'variables';
 @import 'breakpoints';
 @import 'type';
 @import 'form';
@@ -16,8 +16,8 @@ body {
 }
 
 .wrapper {
-	width: 80%;
-	margin: 0 auto;
+	@include outer-container;
+	padding: 0 2rem;
 }
 
 .clearfix:before, .clearfix:after {
@@ -31,7 +31,7 @@ body {
 
 button, .button, .btn {
 	border: 1px solid $gray;
-	padding: .75rem 1.25rem;
+	padding: 1rem 1.25rem;
 	border-radius: .3rem;
 	outline: none;
 	background: $white;
