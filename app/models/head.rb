@@ -11,7 +11,8 @@ class Head < ActiveRecord::Base
 		  :small => "32x32>" }
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-	after_save :destroy_original, :create_zip
+	after_save :destroy_original
+	# after_save :create_zip
 	 
 	private
 	
@@ -20,8 +21,8 @@ class Head < ActiveRecord::Base
 		FileUtils.rmdir(File.expand_path("..", self.image.path)) # remove original folder
 	end
 
-	def create_zip
-		`zip -r -j "#{self.image.path}" "#{self.image.path}"`
-	end
+	# def create_zip
+	# 	`zip -r -j "#{self.image.path}" "#{self.image.path}"`
+	# end
 
 end

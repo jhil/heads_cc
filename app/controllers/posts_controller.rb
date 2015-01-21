@@ -53,12 +53,14 @@ class PostsController < ApplicationController
 	end
 
 	def download
-		uploads_path = "#{Rails.root}/public/uploads" 
-		file_path = uploads_path+"/#{@post.title.parameterize}"
-		if !File.exist?(file_path + '.zip')
-			`zip -r -j "#{file_path}" "#{file_path}"`
+		post_slug = @post.title.parameterize
+		uploads_path = "#{Rails.root}/public/uploads"
+		file_path = uploads_path+"/#{post_slug}"
+		
+		if not File.exists?(file_path + '.zip')
+			`cd "#{uploads_path}" && zip -r "#{post_slug}" "#{post_slug}"`
 		end
-		send_file file_path+".zip", filename: @post.title.parameterize+".zip", :disposition => 'attachment'
+		send_file file_path+".zip", filename: post_slug+".zip", :disposition => 'attachment'
 	end
 
 	private
