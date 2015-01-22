@@ -3,7 +3,7 @@
 	color: $white;
 	padding: 1.5em 0;
 	line-height: 1;
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 	h1 {
 		margin: 2rem 0;
 		@include media($large) {
@@ -73,11 +73,14 @@
 				margin: 0 0 .5rem 0;
 			}
 			.image_row {
-				height: $image_small;
+				height: $image_medium;
 				overflow: hidden;
+				a {
+				}
 				.image_row_item {
-					width: $image_small;
-					height: $image_small;
+					display: inline-block;
+					width: $image_medium;
+					height: $image_medium;
 					img {
 						width: 100%;
 					}
