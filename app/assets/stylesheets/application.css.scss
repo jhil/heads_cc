@@ -95,9 +95,18 @@ header {
 	}
 }
 
-$image-small: 	2rem;
-$image-medium: 	3rem;
-$image-large: 	100px;
+footer {
+	margin: 3rem 0;
+	color: $gray;
+	a {
+		text-decoration: none;
+		color: $gray;
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
 
 @import 'home.css.scss';
 @import 'posts.css.scss';

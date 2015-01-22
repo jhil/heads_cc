@@ -14,9 +14,8 @@
 		-# 		ago
 		.post_action
 			= link_to "Download Pack", download_post_path(@post), class: "button btn-primary"
-
 			- if @post.user == current_user
-				= link_to "Edit", edit_post_path(@post), class: "action"
+				-# = link_to "Edit", edit_post_path(@post), class: "action"
 				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "action"
 
 -# #comments
