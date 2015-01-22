@@ -15,15 +15,32 @@ form {
 
 	input, textarea {
 		outline: none;
-		@include span-columns(4);
+		@include media($mobile) {
+			@include span-columns(4);
+		}
+		@include media($tablet) {
+			@include span-columns(4);
+		}
+		@include media($desktop) {
+			@include span-columns(4);
+		}
+		@include media($large) {
+			@include span-columns(6);
+		}
 		&:hover, &:focus {
 			outline: none;
 		}
 	}
 
 	label {
-		@include span-columns(2);
-		text-align: right;
+		@include media($mobile) {
+			text-align: left;
+			@include span-columns(4);
+		}
+		@include media($tablet) {
+			text-align: right;
+			@include span-columns(2);
+		}
 		padding: 1rem 0;
 	}
 
@@ -59,7 +76,9 @@ form {
 	}
 
 	input[type="submit"] {
-		@include shift(2);
+		@include media($tablet) {
+			@include shift(2);
+		}
 		@extend .btn-primary;
 	}
 
