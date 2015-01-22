@@ -4,6 +4,8 @@
 
 	- if (defined?(@post.title)).nil?
 		%title Heads
+	- elsif current_page?('/posts/new')
+		%title Heads - New
 	- else
 		%title
 			Heads - 
@@ -33,8 +35,8 @@
 	- else 
 
 	.wrapper
-		%p.notice= notice
-		%p.alert= alert
+		-# %p.notice= notice
+		-# %p.alert= alert
 		=yield
 
 	%footer

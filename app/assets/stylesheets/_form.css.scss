@@ -1,4 +1,66 @@
 
 // FORM STYLES
 
-//coming soon
+form {
+
+	// margin-bottom: 4rem;
+	.hint, abbr {
+		display: none; // find out how to actually remove this later
+	}
+
+	.input {
+		margin-bottom: 2rem;
+		@extend .clearfix;
+	}
+
+	input, textarea {
+		outline: none;
+		@include span-columns(4);
+		&:hover, &:focus {
+			outline: none;
+		}
+	}
+
+	label {
+		@include span-columns(2);
+		text-align: right;
+		padding: 1rem 0;
+	}
+
+
+	textarea, input[type="text"], input[type="email"], input[type="password"] {
+		border: 1px solid $gray;
+		padding: 1rem;
+		border-radius: $field-border-radius;
+		background: $white;
+		color: $black;
+		// text-align: center;
+		text-decoration: none;
+		font-family: $font-stack;
+		font-weight: 400;
+		&:focus {
+			border-color: $black;
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: 8rem;
+	}
+
+
+	input[type="file"] {
+	    border: 2px $gray dashed;
+	    padding: 2em;
+	    display: block;
+	    &:focus {
+	    	border-color: $black;
+	    }
+	}
+
+	input[type="submit"] {
+		@include shift(2);
+		@extend .btn-primary;
+	}
+
+}

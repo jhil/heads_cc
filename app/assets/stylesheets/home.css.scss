@@ -32,6 +32,7 @@
 		}
 
 		.post_gif {
+			display: none !important;  //temp
 			@include media($mobile) {
 				display: none;
 			}
@@ -48,6 +49,7 @@
 			@include media($large) {
 			  @include span-columns(1 of 8);
 			}
+
 
 			// border-radius: 50%; // set to toggle with view switch
 			img {

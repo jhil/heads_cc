@@ -1,8 +1,8 @@
 = simple_form_for @post, html: {:multipart => true} do |f|
-	= f.label :heads
-	= file_field_tag "images[]", type: :file, multiple: true
 	= f.input :title
-	-# = f.input :link
-	= f.input :description
+	= f.label :heads
+	.input
+		= file_field_tag "images[]", type: :file, multiple: true
+	= f.input :description, :input_html => {:maxlength => 140}
 
 	= f.button :submit

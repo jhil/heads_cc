@@ -32,30 +32,25 @@ body {
 button, .button, .btn {
 	border: 1px solid $gray;
 	padding: 1rem 1.25rem;
-	border-radius: .25rem;
+	border-radius: $field-border-radius;
 	outline: none;
 	background: $white;
 	color: $gray;
 	text-align: center;
 	text-decoration: none;
+	&:hover {
+		border-color: $black;
+	}
 }
 
 .btn-primary {
 	background: $black;
 	color: $white;
+	border-color: $black;
 	&:hover {
 		background: $gray;
+		border-color: $gray;
 	}
-}
-
-
-input {
-	border: none;
-	border-bottom: 1px $gray solid;
-	padding: .5rem .25rem;
-	font-family: $font-stack;
-	font-weight: 400;
-
 }
 
 header {
@@ -96,7 +91,7 @@ header {
 }
 
 footer {
-	margin: 3rem 0;
+	margin: 4rem 0;
 	color: $gray;
 	a {
 		text-decoration: none;
