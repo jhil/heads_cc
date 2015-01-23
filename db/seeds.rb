@@ -1,1 +1,0 @@
-User.create("email"=>"jahilnbrand@gmail.com", "name"=>"Jeff Hilnbrand", "password"=>"password")
