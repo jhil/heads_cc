@@ -1,3 +1,5 @@
+require 'zip'
+
 class Post < ActiveRecord::Base
 	belongs_to :user
 	has_many :heads, :dependent => :destroy
