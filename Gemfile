@@ -15,6 +15,7 @@ gem 'paperclip', '~> 4.2.1'
 gem 'aws-sdk', '< 2.0'
 gem 'bourbon'
 gem 'neat'
+gem 'rubyzip'
 
 gem 'spring',        	group: :development
 gem 'pry',           	group: :development
