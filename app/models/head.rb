@@ -5,7 +5,7 @@ class Head < ActiveRecord::Base
 		:dependent => :destroy, # if a post is destroyed, the associated heads will destroy also
 		:path => ":rails_root/public/uploads/:post_title/:style/:filename",
 		:url  => "/uploads/:post_title/:style/:filename",
-		:styles => {d
+		:styles => {
 		  :large => "100x100>",
 		  :medium  => "72x72>",
 		  :small => "32x32>" }
