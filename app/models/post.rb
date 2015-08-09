@@ -10,10 +10,11 @@ class Post < ActiveRecord::Base
 		slug = self.get_slug
 
 		compressed_filestream = Zip::OutputStream.write_buffer do |zos|
-		  some_file_list.each do |file|
-		    zos.put_next_entry(file.slug)
-		    zos.print IO.read(file.path)
-		  end
+			Dir["#{uploads_path}/**/**"].reject{|f|f==archive}.each do |file|
+				zipfile.add(file.sub(path+'/',''),file)
+			end
+				
+			end
 		end # Outputs zipfile as StringIO
 
 		s3 = Aws::S3.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
