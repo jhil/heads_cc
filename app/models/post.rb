@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 	def create_zip
 		slug = self.get_slug
 
-		compressed_filestream = Zip::ZipOutputStream.write_buffer do |zos|
+		compressed_filestream = Zip::OutputStream.write_buffer do |zos|
 		  some_file_list.each do |file|
 		    zos.put_next_entry(file.slug)
 		    zos.print IO.read(file.path)
