@@ -1,4 +1,5 @@
 require 'zip'
+require 'aws'
 
 class Post < ActiveRecord::Base
 	belongs_to :user
@@ -9,8 +10,11 @@ class Post < ActiveRecord::Base
 	def create_zip
 		slug = self.get_slug
 
+		ls= exec("ls #{uploads_path}")
+		puts "helo: #{uploads_path}"
+
+
 		compressed_filestream = Zip::OutputStream.write_buffer do |zos|
-			puts `ls #{uploads_path}`
 			Dir["#{uploads_path}/**/**"].reject{|f|f==archive}.each do |file|
 				zipfile.add(file.sub(path+'/',''),file)
 			end
