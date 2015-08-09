@@ -34,4 +34,3 @@ end
 def get_slug
 	return self.title.parameterize
 end
-end
