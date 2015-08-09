@@ -5,13 +5,13 @@ class Head < ActiveRecord::Base
 		:dependent => :destroy, # if a post is destroyed, the associated heads will destroy also
 		:path => ":rails_root/public/uploads/:post_title/:style/:filename",
 		:url  => "/uploads/:post_title/:style/:filename",
-		:styles => {
+		:styles => {d
 		  :large => "100x100>",
 		  :medium  => "72x72>",
 		  :small => "32x32>" }
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-	after_save :destroy_original
+	# after_save :destroy_original
 	after_save :create_zip
 
 	private
