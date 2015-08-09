@@ -3,8 +3,8 @@ class Head < ActiveRecord::Base
 
 	has_attached_file :image,
 		:dependent => :destroy, # if a post is destroyed, the associated heads will destroy also
-		:path => ":rails_root/public/uploads/:post_title/:style/:filename",
-		:url  => "/uploads/:post_title/:style/:filename",
+		:path => "http://headscc.s3.amazonaws.com/app/public/uploads/:post_title/:style/:filename"  # ":rails_root/public/uploads/:post_title/:style/:filename",
+		:url  => "http://headscc.s3.amazonaws.com/app/public/uploads/:post_title/:style/:filename",
 		:styles => {
 		  :large => "100x100>",
 		  :medium  => "72x72>",
