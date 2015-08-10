@@ -63,6 +63,7 @@ class PostsController < ApplicationController
 		zip_str = begin
 		Zip::OutputStream.write_buffer do |stream|
 	    heads.each do |url|
+	    	puts url
 	      name = getName(url)
 	      stream.put_next_entry(name)
 	      download = open(url)
