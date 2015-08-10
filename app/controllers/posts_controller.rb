@@ -51,12 +51,12 @@ class PostsController < ApplicationController
 	end
 
 	def download
-		file_path = $uploads_path+"/#{@post.get_slug}"
-
-		if not File.exists?(file_path + '.zip')
-			@post.create_zip
-		end
-
+		self.heads.each { |head|
+			large = head.image.url(:large)
+			medium = head.image.url(:medium)
+			small = head.image.url(:small)
+			puts "#{large} #{medium} #{small}"
+		}
 		send_file file_path+".zip", filename: @post.get_slug+".zip", :disposition => 'attachment'
 	end
 
