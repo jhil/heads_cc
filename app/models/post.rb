@@ -24,10 +24,8 @@ class Post < ActiveRecord::Base
 
 		compressed_filestream.rewind
 		bucket.put("/app/public/uploads/#{slug}.zip", compressed_filestream.read, {}, 'authenticated-read')
-	end # Outputs zipfile as StringIO
 
-	
-end
+end # Outputs zipfile as StringIO
 
 def get_file_path
 	return $uploads_path+"/#{self.get_slug}"
