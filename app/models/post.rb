@@ -10,11 +10,11 @@ class Post < ActiveRecord::Base
 	def create_zip
 		slug = self.get_slug
 
-		ls= exec("ls #{uploads_path}")
-		puts "helo: #{uploads_path}"
+		ls= exec("ls #{self.get_file_path}")
+		puts "helo: #{ls}"
 
 		compressed_filestream = Zip::OutputStream.write_buffer do |zos|
-			Dir["#{uploads_path}/**/**"].reject{|f|f==archive}.each do |file|
+			Dir["#{self.get_file_path}/**/**"].reject{|f|f==archive}.each do |file|
 				zipfile.add(file.sub(path+'/',''),file)
 			end
 
