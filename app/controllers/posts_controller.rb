@@ -51,7 +51,7 @@ class PostsController < ApplicationController
 	end
 
 	def download
-		self.heads.each { |head|
+		@post.heads.each { |head|
 			large = head.image.url(:large)
 			medium = head.image.url(:medium)
 			small = head.image.url(:small)
