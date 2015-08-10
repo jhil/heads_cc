@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'zip'
 class PostsController < ApplicationController
 
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :download]
@@ -51,13 +53,25 @@ class PostsController < ApplicationController
 	end
 
 	def download
+		heads = []
 		@post.heads.each { |head|
-			large = head.image.url(:large)
-			medium = head.image.url(:medium)
-			small = head.image.url(:small)
-			puts "#{large} #{medium} #{small}"
+			heads.push(head.image.url(:large))
+			heads.push(head.image.url(:medium))
+			heads.push(head.image.url(:small))
 		}
-		send_file file_path+".zip", filename: @post.get_slug+".zip", :disposition => 'attachment'
+
+		zip_str = begin
+		Zip::OutputStream.write_buffer do |stream|
+	    heads.each do |url|
+	      name = getName(url)
+	      stream.put_next_entry(name)
+	      download = open(url)
+	      stream.print(download.read)
+	      end
+	    end
+		end
+
+		send_file zip_str, :type => 'application/zip', :filename => URI::encode(@post.title)+".zip", :disposition => 'attachment'
 	end
 
 	private
@@ -68,6 +82,10 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:heads, :title, :link, :description)
+	end
+
+	def getName(url)
+		return url.split("http://headscc.s3.amazonaws.com/app/public/uploads/")[1].split("?")[0]
 	end
 
 end
