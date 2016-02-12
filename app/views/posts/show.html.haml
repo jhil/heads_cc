@@ -14,7 +14,7 @@
 		-# 		ago
 		.post_action
 			= link_to "Download Pack", download_post_path(@post), class: "button btn-primary"
-			= link_to " Embed", embed_post_path(@post), class: "button fa fa-code", :target => "_blank"
+			= link_to " Embed", embed_post_path(@post, :size => "large"), class: "button fa fa-code", :target => "_blank"
 			- if @post.user == current_user
 				-# = link_to "Edit", edit_post_path(@post), class: "action"
 				= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure?" }, class: "action"

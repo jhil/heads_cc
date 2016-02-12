@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
 	def download
     zip = @post.zip
-		send_file zip, :type => 'application/zip', :filename => zip.basename, :disposition => 'attachment'
+		send_file zip, :type => 'application/zip', :filename => "#{@post.get_slug}.zip", :disposition => 'attachment'
 	end
 
 	def embed
