@@ -3,8 +3,8 @@ class Head < ActiveRecord::Base
 
 	has_attached_file :image,
 		:dependent => :destroy, # if a post is destroyed, the associated heads will destroy also
-		:path => ":rails_root/public/uploads/:post_id/:style/:filename",
-		:url  => "/uploads/:post_id/:style/:filename",
+		:path => ":rails_root/public/uploads/:post_title/:style/:filename",
+		:url  => "/uploads/:post_title/:style/:filename",
 		:styles => {
 		  :large => "100x100>",
 		  :medium  => "72x72>",
@@ -12,6 +12,7 @@ class Head < ActiveRecord::Base
 		}
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
+	# use post_id in path to be title-independent
 	Paperclip.interpolates :post_id do |attachment, style|
 		attachment.instance.post_id
 	end

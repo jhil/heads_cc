@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 		return $uploads_path+"/#{self.id}"
 	end
 
-	def get_slug
+	def slug
 		return self.title.parameterize
 	end
 
@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
     return if head == nil # no attachments to zip
 
     dir = head.root_directory
-    rel_zip_name = "../#{head.post_id}.zip"
+    rel_zip_name = "../#{self.slug}.zip"
     abs_zip_path = File.expand_path(rel_zip_name, dir)
 
     File.delete abs_zip_path if override
