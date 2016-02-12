@@ -13,27 +13,28 @@ class Post < ActiveRecord::Base
 		return self.title.parameterize
 	end
 
-  def zip override=false
-    head = self.heads.first
-    return if head == nil # no attachments to zip
+  def zip dir="#{Rails.root}/tmp", override=false
+    zip_filename = "#{self.slug}.zip"
+    tmp_filename = "#{dir}/#{zip_filename}"
 
-    dir = head.root_directory
-    rel_zip_name = "../#{self.slug}.zip"
-    abs_zip_path = File.expand_path(rel_zip_name, dir)
+    File.delete tmp_filename if override and File.exist? tmp_filename
 
-    File.delete abs_zip_path if override
-
-    if not File.exist? abs_zip_path
-      cmd = "cd \"#{dir}\" && zip -r \"#{rel_zip_name}\" ."
-      exec cmd
+    if not File.exist? tmp_filename
+      Zip::File.open(tmp_filename, Zip::File::CREATE) do |zip|
+        self.heads.each do |e|
+          e.image.styles.each do |style_name, style|
+            attachment = Paperclip.io_adapters.for(style)
+            zip.add("#{style_name}/#{e.image.original_filename}", attachment.path)
+          end
+        end
+      end
     end
-
-    Pathname.new(abs_zip_path)
+    return tmp_filename
   end
 
   # zips the pack and overrides the existing zip folder
-  def zip!
-    self.zip true
+  def zip! dir="#{Rails.root}/tmp"
+    self.zip dir, true
   end
 
 end
