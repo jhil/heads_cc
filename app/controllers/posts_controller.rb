@@ -67,6 +67,7 @@ class PostsController < ApplicationController
 
 	def find_post
 		@post = Post.find(params[:id])
+		redirect_to_good_slug(@post) and return if bad_slug?(@post)
 	end
 
 	def post_params

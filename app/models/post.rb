@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
 	has_many :heads, :dependent => :destroy
 	has_many :comments
 	accepts_nested_attributes_for :heads, :allow_destroy => true 
+  custom_slugs_with :title
 
 	def get_file_path
 		return $uploads_path+"/#{self.get_slug}"
@@ -11,10 +12,6 @@ class Post < ActiveRecord::Base
 	def get_slug
 		return self.title.parameterize
 	end
-
-  def to_param
-    "#{self.id} #{self.title}".parameterize
-  end
 
   def zip override=false
     head = self.heads.first
