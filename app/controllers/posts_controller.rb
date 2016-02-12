@@ -53,28 +53,10 @@ class PostsController < ApplicationController
 	end
 
 	def download
-		heads = []
-		@post.heads.each { |head|
-			heads.push(head.image.url(:large))
-			heads.push(head.image.url(:medium))
-			heads.push(head.image.url(:small))
-		}
-
-		zip_str = begin
-		Zip::OutputStream.write_buffer do |stream|
-	    heads.each do |url|
-	    	puts url
-	      name = getName(url)
-	      stream.put_next_entry(name)
-	      download = open(url)
-	      stream.print(download.read)
-	      end
-	    end
-		end
-
-		send_file zip_str, :type => 'application/zip', :filename => URI::encode(@post.title)+".zip", :disposition => 'attachment'
+    zip = @post.zip
+		send_file zip, :type => 'application/zip', :filename => zip.basename, :disposition => 'attachment'
 	end
-
+	
 	private
 
 	def find_post
@@ -83,10 +65,6 @@ class PostsController < ApplicationController
 
 	def post_params
 		params.require(:post).permit(:heads, :title, :link, :description)
-	end
-
-	def getName(url)
-		return url.split("http://headscc.s3.amazonaws.com/app/public/uploads/")[1].split("?")[0]
 	end
 
 end

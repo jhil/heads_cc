@@ -17,3 +17,7 @@
 
 
 /public/uploads
+
+# tmp files
+*.swp
+*.DS_Store
