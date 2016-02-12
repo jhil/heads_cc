@@ -2,7 +2,7 @@ require 'open-uri'
 require 'zip'
 class PostsController < ApplicationController
 
-	before_action :find_post, only: [:show, :edit, :update, :destroy, :download]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :download, :embed]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -56,7 +56,13 @@ class PostsController < ApplicationController
     zip = @post.zip
 		send_file zip, :type => 'application/zip', :filename => zip.basename, :disposition => 'attachment'
 	end
-	
+
+	def embed
+		image = @post.heads.sample.image
+		params[:size] = :large unless params[:size] != nil
+		send_file image.path(params[:size]), :type => image.content_type, disposition: "inline"
+	end
+
 	private
 
 	def find_post

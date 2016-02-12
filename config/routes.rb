@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts do
   	member do
       get "download", to: "posts#download"
+      get "embed", to: "posts#embed"
   	end
   	resources :comments
   	resources :heads
