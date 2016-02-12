@@ -59,8 +59,8 @@ class PostsController < ApplicationController
 
 	def embed
 		image = @post.heads.sample.image
-		params[:size] = :large unless params[:size] != nil
-		send_file image.path(params[:size]), :type => image.content_type, disposition: "inline"
+		size = (params[:size] || :large).to_sym
+		send_file Paperclip.io_adapters.for(image.styles[size]).path, :type => image.content_type, disposition: "inline"
 	end
 
 	private
