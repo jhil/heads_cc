@@ -5,8 +5,8 @@ class Post < ActiveRecord::Base
 	accepts_nested_attributes_for :heads, :allow_destroy => true 
   custom_slugs_with :title
 
-	def get_file_path
-		return $uploads_path+"/#{self.get_slug}"
+	def get_pack_path
+		return $uploads_path+"/#{self.id}"
 	end
 
 	def get_slug
