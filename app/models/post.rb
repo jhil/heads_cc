@@ -14,6 +14,7 @@ class Post < ActiveRecord::Base
 	end
 
   def zip dir="#{Rails.root}/tmp", override=false
+    GC.disable
     zip_filename = "#{self.slug}.zip"
     tmp_filename = "#{dir}/#{zip_filename}"
 
@@ -29,6 +30,8 @@ class Post < ActiveRecord::Base
         end
       end
     end
+    GC.enable
+    GC.start
     return tmp_filename
   end
 
