@@ -3,16 +3,15 @@
 %head
 
 	- if (defined?(@post.title)).nil?
-		%title Heads
+		%title Headsdown
 	- elsif current_page?('/posts/new')
-		%title Heads - New Pack
+		%title Headsdown - New Pack
 	- else
 		%title
-			Heads - 
+			Headsdown - 
 			= @post.title
 
 	%link{:rel => "stylesheet", :href => "http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css"}
-	%link{:rel => "stylesheet", :href => "http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"}
 	= stylesheet_link_tag    'application', media: 'all'
 	= javascript_include_tag 'application'
 	= csrf_meta_tags
@@ -21,7 +20,7 @@
 %body
 	%header
 		.wrapper.clearfix
-			#logo= link_to "heads.cc", root_path
+			#logo= link_to "headsdown", root_path
 			%nav
 				- if user_signed_in?
 					= link_to current_user.name, edit_user_registration_path
@@ -42,9 +41,12 @@
 	%footer
 		.wrapper
 			%p
-				Heads 
+				Headsdown 
 				= Time.now.year
 				&emsp;|&emsp;
-				= link_to "Created by jhil", "http://twitter.com/jhilmd"
+				Created by 
+				= link_to "jhil", "http://twitter.com/jhilmd"
+				&
+				= link_to "nickaversano", "https://github.com/nickaversano"
 				&emsp;|&emsp;
 				= link_to "Contribute on Github", "https://github.com/jhil/heads_cc"
