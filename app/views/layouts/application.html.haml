@@ -20,7 +20,7 @@
 %body
 	%header
 		.wrapper.clearfix
-			#logo= link_to "headsdown", root_path
+			#logo= link_to "Headsdown", root_path
 			%nav
 				- if user_signed_in?
 					= link_to current_user.name, edit_user_registration_path

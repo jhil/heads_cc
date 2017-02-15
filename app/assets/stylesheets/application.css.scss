@@ -60,6 +60,18 @@ header {
 		float: left;
 		@extend h2;
 		margin-bottom: 0;
+
+		&:before {
+		background-image: url('/images/placeholder-head.svg');
+    background-size: 2rem 2rem;
+    display: inline-block;
+    width: 2rem; 
+    height: 2rem;
+    content:"";
+    margin-right: 1rem;
+    vertical-align: -25%;
+		}
+
 		a {
 			color: $black;
 			text-decoration: none;
