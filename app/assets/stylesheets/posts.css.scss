@@ -1,5 +1,4 @@
 #post_show {
-	margin-top: 2rem;
 	.post_images {
 		@include media($mobile) {
 			@include span-columns(4);
