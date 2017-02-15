@@ -14,7 +14,7 @@
 
 #posts {
 	.post {
-		margin: 1rem 0;
+		margin: 2rem 0;
 
 		@include media($mobile) {
 		  @include span-columns(4);
@@ -71,9 +71,6 @@
 			  @include span-columns(7 of 8);
 			}
 
-			h2 {
-				margin: 0 0 .5rem 0;
-			}
 			.image_row {
 				height: $image_medium;
 				overflow: hidden;

@@ -1,5 +1,5 @@
-
 #post_show {
+	margin-top: 2rem;
 	.post_images {
 		@include media($mobile) {
 			@include span-columns(4);
@@ -72,40 +72,5 @@
 	.username {
 		color: $gray;
 		margin: 0 0 1rem 0;
-	}
-}
-
-#comments {
-	padding-bottom: 4rem;
-	width: 50%;
-	.comment_count {
-		border-bottom: 1px solid #E9E9E9;
-		padding-bottom: .5rem;
-		margin-bottom: 0;
-	}
-	.comment {
-		padding: 2rem 0;
-		border-bottom: 1px solid #E9E9E9;
-		padding-left: 5%;
-		.username {
-			font-size: 1.3rem;
-			color: #333233;
-			margin: 0 0 .5rem 0;
-		}
-		.content {
-			margin: 0;
-			color: #969696;
-		}
-	}
-	.comment_content {
-		margin-top: 2.5rem;
-		textarea {
-			width: 100%;
-			margin: 1rem 0;
-			min-height: 150px;
-			border: 1px solid #E4E4E4;
-			background: #F8F9FA;
-			border-radius: 0.3rem;
-		}
 	}
 }
