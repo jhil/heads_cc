@@ -28,9 +28,7 @@
 	}
 	.post_action {
 		@include media($mobile) {
-			@include span-columns(2);
-			@include shift(1);
-			margin-top: 2rem;
+			display: none;
 		}
 		@include media($tablet) {
 			@include span-columns(4);
